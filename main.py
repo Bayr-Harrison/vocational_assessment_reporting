@@ -49,6 +49,7 @@ custom_css = f"""
     .card-container {{
         display: flex;
         justify-content: center;
+        align-items: flex-start;
         gap: 20px; /* Space between cards */
         margin-top: 40px;
         flex-wrap: nowrap; /* Prevents wrapping of cards */
@@ -96,39 +97,30 @@ st.markdown('<div class="title">Welcome to the Vocational Assessment Portal</div
 st.markdown('<div class="subtitle">Streamlined solutions for generating assessment-related reports</div>', unsafe_allow_html=True)
 
 # Card container
-st.markdown('<div class="card-container">', unsafe_allow_html=True)
-
-# Card 1: Pass/Fail Reports
 st.markdown("""
-<div class="card">
-    <div class="card-title">Pass/Fail Reports</div>
-    <div class="card-description">
-        Generate detailed reports showing pass/fail statistics for theory exams, categorized by curriculum and date.
+<div class="card-container">
+    <div class="card">
+        <div class="card-title">Pass/Fail Reports</div>
+        <div class="card-description">
+            Generate detailed reports showing pass/fail statistics for theory exams, categorized by curriculum and date.
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Query Exam Results</div>
+        <div class="card-description">
+            Search for detailed theory exam results, including attendance and scores, across specified date ranges.
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-title">Individualized Coversheets</div>
+        <div class="card-description">
+            Generate personalized coversheets summarizing each student's exam performance with detailed subject-wise results.
+        </div>
     </div>
 </div>
 """, unsafe_allow_html=True)
-
-# Card 2: Exam Results Query
-st.markdown("""
-<div class="card">
-    <div class="card-title">Query Exam Results</div>
-    <div class="card-description">
-        Search for detailed theory exam results, including attendance and scores, across specified date ranges.
-    </div>
-</div>
-""", unsafe_allow_html=True)
-
-# Card 3: Coversheets
-st.markdown("""
-<div class="card">
-    <div class="card-title">Individualized Coversheets</div>
-    <div class="card-description">
-        Generate personalized coversheets summarizing each student's exam performance with detailed subject-wise results.
-    </div>
-</div>
-""", unsafe_allow_html=True)
-
-st.markdown('</div>', unsafe_allow_html=True)
 
 # Footer
 st.markdown('<div class="footer">© 2024 Vocational Assessment Portal. All rights reserved.</div>', unsafe_allow_html=True)
