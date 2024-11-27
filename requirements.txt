@@ -1,0 +1,5 @@
+streamlit
+pandas
+fpdf
+pg8000
+openpyxl
