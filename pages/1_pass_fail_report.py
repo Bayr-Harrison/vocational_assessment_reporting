@@ -42,7 +42,7 @@ st.markdown(page_style, unsafe_allow_html=True)
 st.markdown('<p class="title">Generate Pass/Fail Reports</p>', unsafe_allow_html=True)
 
 # Set a simple password
-PASSWORD = os.environ["APP_PASSWORD"]
+PASSWORD = os.environ["APP_PASSWORD1"]
 password = st.text_input("Enter Password", type="password")
 if password != PASSWORD:
     st.warning("Incorrect password")
