@@ -8,26 +8,29 @@ st.set_page_config(
 )
 
 # Inline CSS for styling
-page_bg_color = """
+page_style = """
     <style>
     /* Background color */
     .stApp {
-        background-color: #f0f4fa;
+        background-color: #e0e0e0; /* Light grey background */
     }
 
     /* Text customization */
     .title {
-        color: #2b4c7e;
-        font-size: 40px;
+        color: #2b2b2b; /* Dark grey */
+        font-size: 42px;
         font-weight: bold;
         text-align: center;
+        font-family: 'Arial', sans-serif;
         margin-top: 20px;
     }
 
     .subtitle {
-        color: #527ba1;
-        font-size: 25px;
+        color: #595959; /* Medium grey */
+        font-size: 24px;
         text-align: center;
+        font-family: 'Arial', sans-serif;
+        margin-bottom: 40px;
     }
 
     /* Button container styling */
@@ -36,7 +39,7 @@ page_bg_color = """
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        gap: 20px;
+        gap: 30px;
         margin: auto;
         margin-top: 100px; /* Space the buttons down the screen */
     }
@@ -47,19 +50,23 @@ page_bg_color = """
         gap: 20px; /* Space between button and description */
     }
 
+    /* Neumorphic button styling */
     .stButton>button {
-        background-color: #527ba1;
-        color: white;
+        background: #e0e0e0; /* Match the background for a flat look */
         border: none;
+        border-radius: 12px;
+        box-shadow: 4px 4px 6px #bebebe, -4px -4px 6px #ffffff;
         font-size: 16px;
-        padding: 10px 20px;
-        border-radius: 5px;
+        padding: 15px 30px;
+        font-family: 'Arial', sans-serif;
+        color: #2b2b2b; /* Dark grey text */
         cursor: pointer;
     }
 
     .stButton>button:hover {
-        background-color: #3b6a9e;
-        color: white;
+        background: #d6d6d6;
+        box-shadow: inset 2px 2px 4px #bebebe, inset -2px -2px 4px #ffffff;
+        color: #2b2b2b;
     }
 
     /* Logo placement */
@@ -72,7 +79,7 @@ page_bg_color = """
     }
     </style>
 """
-st.markdown(page_bg_color, unsafe_allow_html=True)
+st.markdown(page_style, unsafe_allow_html=True)
 
 # Logo in the top-left corner
 logo_url = "https://raw.githubusercontent.com/Bayr-Harrison/vocational_assessment_reporting/main/arx_logo.png"
