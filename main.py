@@ -38,7 +38,8 @@ page_bg_color = """
         justify-content: center;
         gap: 20px;
         margin: auto;
-        width: 50%;
+        width: 60%; /* Adjust the width of the container for alignment */
+        max-width: 400px; /* Prevent it from being too wide */
         margin-top: 100px; /* Space the buttons down the screen */
     }
 
@@ -50,7 +51,6 @@ page_bg_color = """
         padding: 10px 20px;
         border-radius: 5px;
         cursor: pointer;
-        width: 100%; /* Button stretches to fill space */
     }
 
     .stButton>button:hover {
