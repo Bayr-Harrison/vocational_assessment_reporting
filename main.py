@@ -77,20 +77,25 @@ st.markdown(page_style, unsafe_allow_html=True)
 st.markdown('<p class="title">Welcome to the Vocational Assessment Portal</p>', unsafe_allow_html=True)
 st.markdown('<p class="subtitle">Your one-stop solution for exam reporting and coversheet generation</p>', unsafe_allow_html=True)
 
+# Check query params for page navigation
+query_params = st.experimental_get_query_params()
+page = query_params.get("page", ["main"])[0]
+
+if page == "pass_fail_report":
+    st.write("Redirecting to Pass/Fail Reporting Page...")
+    st.stop()
+
 # Button container
 st.markdown('<div class="button-container">', unsafe_allow_html=True)
 
 # Navigation Buttons
 if st.button("Generate Pass/Fail Reports"):
-    st.experimental_set_query_params(page="pass_fail_report")
-    st.experimental_rerun()
+    st.query_params(page="pass_fail_report")
 
 if st.button("Query Exam Results"):
-    st.experimental_set_query_params(page="query_exam_results")
-    st.experimental_rerun()
+    st.query_params(page="query_exam_results")
 
 if st.button("Generate Coversheets"):
-    st.experimental_set_query_params(page="generate_coversheets")
-    st.experimental_rerun()
+    st.query_params(page="generate_coversheets")
 
 st.markdown('</div>', unsafe_allow_html=True)
