@@ -24,7 +24,7 @@ page_style = f"""
         position: absolute;
         top: 20px;
         left: 20px;
-        width: 400px;
+        width: 150px;
     }}
 
     /* Title styling */
@@ -63,7 +63,9 @@ page_style = f"""
         width: 80%;
         max-width: 600px;
         text-align: center;
-        transition: transform 0.2s ease;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        cursor: pointer;
+        text-decoration: none;
     }}
 
     .card:hover {{
@@ -107,32 +109,32 @@ st.markdown('<div class="container">', unsafe_allow_html=True)
 
 # Pass/Fail Reports card
 st.markdown("""
-<div class="card">
+<a href="/1_pass_fail_report" target="_self" class="card">
     <div class="card-title">Pass/Fail Reports</div>
     <div class="card-description">
         Generate comprehensive reports showing pass and fail statistics for theory exams, categorized by date, curriculum, and more.
     </div>
-</div>
+</a>
 """, unsafe_allow_html=True)
 
 # Query Exam Results card
 st.markdown("""
-<div class="card">
+<a href="/2_theory_results_reporting" target="_self" class="card">
     <div class="card-title">Query Exam Results</div>
     <div class="card-description">
         View detailed exam results, including scores, attendance records, and session details, for selected time periods.
     </div>
-</div>
+</a>
 """, unsafe_allow_html=True)
 
 # Individualized Coversheets card
 st.markdown("""
-<div class="card">
+<a href="/3_theory_coversheets" target="_self" class="card">
     <div class="card-title">Individualized Coversheets</div>
     <div class="card-description">
         Generate personalized coversheets summarizing each student's exam performance with detailed subject-wise results.
     </div>
-</div>
+</a>
 """, unsafe_allow_html=True)
 
 st.markdown('</div>', unsafe_allow_html=True)
