@@ -125,7 +125,7 @@ st.markdown('<div class="card-container">', unsafe_allow_html=True)
 
 # Card 1: Pass/Fail Reports
 if st.button("Pass/Fail Reports"):
-    st.experimental_set_query_params(page="1_Pass_Fail_Report")
+    st.query_params(page="1_Pass_Fail_Report")
 st.markdown("""
 <div class="card">
     <div class="card-title">Pass/Fail Reports</div>
@@ -137,7 +137,7 @@ st.markdown("""
 
 # Card 2: Exam Results Query
 if st.button("Query Exam Results"):
-    st.experimental_set_query_params(page="2_Theory_Results_Report")
+    st.query_params(page="2_Theory_Results_Report")
 st.markdown("""
 <div class="card">
     <div class="card-title">Query Exam Results</div>
@@ -149,7 +149,7 @@ st.markdown("""
 
 # Card 3: Coversheets
 if st.button("Individualized Coversheets"):
-    st.experimental_set_query_params(page="3_Coversheet_Generator")
+    st.query_params(page="3_Coversheet_Generator")
 st.markdown("""
 <div class="card">
     <div class="card-title">Individualized Coversheets</div>
