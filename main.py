@@ -31,7 +31,16 @@ page_bg_color = """
     }
 
     /* Button styling */
-    .vertical-buttons .stButton>button {
+    .centered-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 40px;
+    }
+
+    .centered-buttons .stButton>button {
         background-color: #527ba1;
         color: white;
         border: none;
@@ -39,21 +48,20 @@ page_bg_color = """
         padding: 10px 20px;
         border-radius: 5px;
         cursor: pointer;
-        margin-bottom: 10px;
     }
 
-    .vertical-buttons .stButton>button:hover {
+    .centered-buttons .stButton>button:hover {
         background-color: #3b6a9e;
         color: white;
     }
 
     /* Logo placement and size */
     .logo {
-        position: absolute;
-        top: 20px;
-        left: 20px;
-        width: 250px; /* Increased logo size */
+        display: block;
+        margin: 0 auto;
+        width: 400px; /* Increased logo size */
         height: auto; /* Maintain aspect ratio */
+        margin-bottom: 20px;
     }
     </style>
 """
@@ -67,12 +75,22 @@ st.markdown(f'<img class="logo" src="{logo_url}" alt="ARX Logo">', unsafe_allow_
 st.markdown('<p class="title">Welcome to the Vocational Assessment Portal</p>', unsafe_allow_html=True)
 st.markdown('<p class="subtitle">Your one-stop solution for exam reporting and coversheet generation</p>', unsafe_allow_html=True)
 
-# Stacked navigation buttons
-st.markdown('<div class="vertical-buttons">', unsafe_allow_html=True)
+# Centered navigation buttons with descriptions
+st.markdown('<div class="centered-buttons">', unsafe_allow_html=True)
+
+# Pass/Fail Reports Button
 if st.button("Generate Pass/Fail Reports"):
     st.experimental_set_query_params(page="pass_fail")
+st.write("Generate a comprehensive report showing pass and fail statistics for theory exams.")
+
+# Query Exam Results Button
 if st.button("Query Exam Results"):
     st.experimental_set_query_params(page="query_results")
+st.write("Query detailed exam results for a specific date range, including scores and attendance.")
+
+# Coversheets Button
 if st.button("Generate Coversheets"):
     st.experimental_set_query_params(page="coversheets")
+st.write("Generate individualized coversheets for students, summarizing their exam performance.")
+
 st.markdown('</div>', unsafe_allow_html=True)
