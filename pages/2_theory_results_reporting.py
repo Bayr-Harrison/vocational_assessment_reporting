@@ -9,7 +9,7 @@ from openpyxl.utils import get_column_letter
 
 # Set page configuration
 st.set_page_config(
-    page_title="Theory Results Report",
+    page_title="Theory Results General Reporting",
     page_icon="📘",
     layout="wide"
 )

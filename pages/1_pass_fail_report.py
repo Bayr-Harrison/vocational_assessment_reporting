@@ -9,7 +9,7 @@ from openpyxl.utils import get_column_letter
 
 # Customizing the page
 st.set_page_config(
-    page_title="Pass Fail Report",
+    page_title="Pass-Fail Reporting Portal",
     page_icon="📘",
     layout="wide"
 )
