@@ -34,12 +34,10 @@ page_bg_color = """
     .button-container {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         justify-content: center;
         gap: 20px;
         margin: auto;
-        width: 70%; /* Adjust the width for alignment */
-        max-width: 600px; /* Prevent excessive width */
         margin-top: 100px; /* Space the buttons down the screen */
     }
 
@@ -87,7 +85,6 @@ st.markdown('<p class="subtitle">Your one-stop solution for exam reporting and c
 # Button container
 st.markdown('<div class="button-container">', unsafe_allow_html=True)
 
-# Button rows with descriptions to the right
 # Pass/Fail Reports
 st.markdown('<div class="button-row">', unsafe_allow_html=True)
 if st.button("Generate Pass/Fail Reports"):
