@@ -63,13 +63,11 @@ page_style = f"""
         width: 80%;
         max-width: 600px;
         text-align: center;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
         cursor: pointer;
         text-decoration: none;
     }}
 
     .card:hover {{
-        transform: scale(1.02);
         box-shadow: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
     }}
 
@@ -108,33 +106,39 @@ st.markdown('<div class="subtitle">Your one-stop solution for exam reporting and
 st.markdown('<div class="container">', unsafe_allow_html=True)
 
 # Pass/Fail Reports card
+if st.button("Pass/Fail Reports"):
+    st.experimental_set_query_params(page="1_Pass_Fail_Report")
 st.markdown("""
-<a href="/1_pass_fail_report" target="_self" class="card">
+<div class="card">
     <div class="card-title">Pass/Fail Reports</div>
     <div class="card-description">
         Generate comprehensive reports showing pass and fail statistics for theory exams, categorized by date, curriculum, and more.
     </div>
-</a>
+</div>
 """, unsafe_allow_html=True)
 
 # Query Exam Results card
+if st.button("Query Exam Results"):
+    st.experimental_set_query_params(page="2_Theory_Results_Report")
 st.markdown("""
-<a href="/2_theory_results_reporting" target="_self" class="card">
+<div class="card">
     <div class="card-title">Query Exam Results</div>
     <div class="card-description">
         View detailed exam results, including scores, attendance records, and session details, for selected time periods.
     </div>
-</a>
+</div>
 """, unsafe_allow_html=True)
 
 # Individualized Coversheets card
+if st.button("Individualized Coversheets"):
+    st.experimental_set_query_params(page="3_Coversheet_Generator")
 st.markdown("""
-<a href="/3_theory_coversheets" target="_self" class="card">
+<div class="card">
     <div class="card-title">Individualized Coversheets</div>
     <div class="card-description">
         Generate personalized coversheets summarizing each student's exam performance with detailed subject-wise results.
     </div>
-</a>
+</div>
 """, unsafe_allow_html=True)
 
 st.markdown('</div>', unsafe_allow_html=True)
