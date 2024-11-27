@@ -21,7 +21,7 @@ page_style = f"""
         background-position: center;
     }}
     .title {{
-        color: #ffffff;
+        color: #0a172b;
         font-size: 48px;
         font-weight: bold;
         text-align: center;
@@ -29,14 +29,14 @@ page_style = f"""
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     }}
     .subtitle {{
-        color: #ffffff;
+        color: #0a172b;
         font-size: 24px;
         text-align: center;
         margin-bottom: 40px;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
     }}
     .description {{
-        color: #ffffff;
+        color: #0a172b;
         font-size: 18px;
         text-align: center;
         line-height: 1.6;
@@ -49,18 +49,19 @@ st.markdown(page_style, unsafe_allow_html=True)
 
 # Title and subtitle
 st.markdown('<div class="title">Welcome to the Vocational Assessment Portal</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">Your one-stop solution for all assessment-related reports</div>', unsafe_allow_html=True)
 
 # Description
 st.markdown("""
 <div class="description">
 This portal provides tools for generating various reports:
 <br><br>
-<strong>Pass/Fail Reports:</strong> Access detailed pass and fail statistics for theory exams.
+<strong>Pass/Fail Reports:</strong> View Theory Exam Results: Pass Fail Report Portal.
 <br>
-<strong>Exam Results Query:</strong> View detailed exam results for students.
 <br>
-<strong>Coversheets:</strong> Generate personalized coversheets for student performance.
+<strong>Exam Results Query:</strong> View Theory Exams Results: General Reporting Portal.
+<br>
+<br>
+<strong>Coversheets:</strong> View Theory Coversheet Generator.
 <br><br>
 Use the navigation bar on the left to select a reporting option and begin.
 </div>
