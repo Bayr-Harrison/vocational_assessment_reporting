@@ -51,7 +51,7 @@ custom_css = f"""
         justify-content: center;
         gap: 20px; /* Space between cards */
         margin-top: 40px;
-        flex-wrap: wrap; /* Allows wrapping on smaller screens */
+        flex-wrap: nowrap; /* Prevents wrapping of cards */
     }}
 
     /* Card styling */
@@ -62,12 +62,6 @@ custom_css = f"""
         padding: 20px;
         width: 300px;
         text-align: center;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }}
-
-    .card:hover {{
-        transform: translateY(-5px);
-        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
     }}
 
     .card-title {{
