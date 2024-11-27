@@ -66,7 +66,7 @@ page_bg_color = """
 st.markdown(page_bg_color, unsafe_allow_html=True)
 
 # Logo image from GitHub repository
-logo_url = "https://raw.githubusercontent.com/<your-github-username>/<repository-name>/main/arx_logo.png"
+logo_url = "https://raw.githubusercontent.com/Bayr-Harrison/vocational_assessment_reporting/main/arx_logo.png"
 st.markdown(f'<img class="logo" src="{logo_url}" alt="ARX Logo">', unsafe_allow_html=True)
 
 # Title and subtitle
