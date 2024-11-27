@@ -31,16 +31,18 @@ page_bg_color = """
     }
 
     /* Button styling */
-    .centered-buttons {
+    .button-container {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
         gap: 20px;
-        margin-top: 40px;
+        margin: auto;
+        width: 50%;
+        margin-top: 100px; /* Space the buttons down the screen */
     }
 
-    .centered-buttons .stButton>button {
+    .stButton>button {
         background-color: #527ba1;
         color: white;
         border: none;
@@ -48,26 +50,27 @@ page_bg_color = """
         padding: 10px 20px;
         border-radius: 5px;
         cursor: pointer;
+        width: 100%; /* Button stretches to fill space */
     }
 
-    .centered-buttons .stButton>button:hover {
+    .stButton>button:hover {
         background-color: #3b6a9e;
         color: white;
     }
 
-    /* Logo placement and size */
+    /* Logo placement */
     .logo {
-        display: block;
-        margin: 0 auto;
-        width: 400px; /* Increased logo size */
-        height: auto; /* Maintain aspect ratio */
-        margin-bottom: 20px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 300px;
+        height: auto;
     }
     </style>
 """
 st.markdown(page_bg_color, unsafe_allow_html=True)
 
-# Logo image from GitHub repository
+# Logo in the top-left corner
 logo_url = "https://raw.githubusercontent.com/Bayr-Harrison/vocational_assessment_reporting/main/arx_logo.png"
 st.markdown(f'<img class="logo" src="{logo_url}" alt="ARX Logo">', unsafe_allow_html=True)
 
@@ -75,22 +78,22 @@ st.markdown(f'<img class="logo" src="{logo_url}" alt="ARX Logo">', unsafe_allow_
 st.markdown('<p class="title">Welcome to the Vocational Assessment Portal</p>', unsafe_allow_html=True)
 st.markdown('<p class="subtitle">Your one-stop solution for exam reporting and coversheet generation</p>', unsafe_allow_html=True)
 
-# Centered navigation buttons with descriptions
-st.markdown('<div class="centered-buttons">', unsafe_allow_html=True)
+# Button container for alignment and descriptions
+st.markdown('<div class="button-container">', unsafe_allow_html=True)
 
 # Pass/Fail Reports Button
 if st.button("Generate Pass/Fail Reports"):
     st.experimental_set_query_params(page="pass_fail")
-st.write("Generate a comprehensive report showing pass and fail statistics for theory exams.")
+st.write("✔ **Generate a comprehensive report** that shows pass and fail statistics for theory exams within a selected period.")
 
 # Query Exam Results Button
 if st.button("Query Exam Results"):
     st.experimental_set_query_params(page="query_results")
-st.write("Query detailed exam results for a specific date range, including scores and attendance.")
+st.write("✔ **Query detailed exam results**, including scores and attendance, for a specific date range.")
 
 # Coversheets Button
 if st.button("Generate Coversheets"):
     st.experimental_set_query_params(page="coversheets")
-st.write("Generate individualized coversheets for students, summarizing their exam performance.")
+st.write("✔ **Generate individualized coversheets** summarizing each student's exam performance.")
 
 st.markdown('</div>', unsafe_allow_html=True)
