@@ -24,7 +24,7 @@ page_style = f"""
         position: absolute;
         top: 20px;
         left: 20px;
-        width: 150px;
+        width: 400px;
     }}
 
     /* Title styling */
