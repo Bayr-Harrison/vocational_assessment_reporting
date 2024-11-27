@@ -45,22 +45,13 @@ custom_css = f"""
         margin-bottom: 40px;
     }}
 
-    /* Info section styling */
-    .info-section {{
-        max-width: 800px;
-        margin: 0 auto;
-        text-align: center;
-        line-height: 1.8;
-        color: #C0C0C0;
-    }}
-
     /* Card container */
     .card-container {{
         display: flex;
-        flex-wrap: wrap;
         justify-content: center;
-        gap: 20px;
+        gap: 20px; /* Space between cards */
         margin-top: 40px;
+        flex-wrap: wrap; /* Allows wrapping on smaller screens */
     }}
 
     /* Card styling */
@@ -71,6 +62,12 @@ custom_css = f"""
         padding: 20px;
         width: 300px;
         text-align: center;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }}
+
+    .card:hover {{
+        transform: translateY(-5px);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
     }}
 
     .card-title {{
@@ -103,13 +100,6 @@ st.markdown(f'<img src="{logo_url}" class="logo" alt="ARX Logo">', unsafe_allow_
 # Title and subtitle
 st.markdown('<div class="title">Welcome to the Vocational Assessment Portal</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Streamlined solutions for generating assessment-related reports</div>', unsafe_allow_html=True)
-
-# Info section
-st.markdown("""
-<div class="info-section">
-This portal provides tools to generate detailed assessment reports efficiently. Below are the available features:
-</div>
-""", unsafe_allow_html=True)
 
 # Card container
 st.markdown('<div class="card-container">', unsafe_allow_html=True)
