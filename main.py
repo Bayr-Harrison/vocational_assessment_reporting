@@ -30,7 +30,7 @@ page_bg_color = """
         text-align: center;
     }
 
-    /* Button styling */
+    /* Button container styling */
     .button-container {
         display: flex;
         flex-direction: column;
@@ -38,9 +38,15 @@ page_bg_color = """
         justify-content: center;
         gap: 20px;
         margin: auto;
-        width: 60%; /* Adjust the width of the container for alignment */
-        max-width: 400px; /* Prevent it from being too wide */
+        width: 70%; /* Adjust the width for alignment */
+        max-width: 600px; /* Prevent excessive width */
         margin-top: 100px; /* Space the buttons down the screen */
+    }
+
+    .button-row {
+        display: flex;
+        align-items: center;
+        gap: 20px; /* Space between button and description */
     }
 
     .stButton>button {
@@ -78,22 +84,29 @@ st.markdown(f'<img class="logo" src="{logo_url}" alt="ARX Logo">', unsafe_allow_
 st.markdown('<p class="title">Welcome to the Vocational Assessment Portal</p>', unsafe_allow_html=True)
 st.markdown('<p class="subtitle">Your one-stop solution for exam reporting and coversheet generation</p>', unsafe_allow_html=True)
 
-# Button container for alignment and descriptions
+# Button container
 st.markdown('<div class="button-container">', unsafe_allow_html=True)
 
-# Pass/Fail Reports Button
+# Button rows with descriptions to the right
+# Pass/Fail Reports
+st.markdown('<div class="button-row">', unsafe_allow_html=True)
 if st.button("Generate Pass/Fail Reports"):
     st.experimental_set_query_params(page="pass_fail")
-st.write("✔ **Generate a comprehensive report** that shows pass and fail statistics for theory exams within a selected period.")
+st.write("Generate a comprehensive report showing pass and fail statistics for theory exams.")
+st.markdown('</div>', unsafe_allow_html=True)
 
-# Query Exam Results Button
+# Query Exam Results
+st.markdown('<div class="button-row">', unsafe_allow_html=True)
 if st.button("Query Exam Results"):
     st.experimental_set_query_params(page="query_results")
-st.write("✔ **Query detailed exam results**, including scores and attendance, for a specific date range.")
+st.write("Query detailed exam results, including scores and attendance, for a specific date range.")
+st.markdown('</div>', unsafe_allow_html=True)
 
-# Coversheets Button
+# Coversheets
+st.markdown('<div class="button-row">', unsafe_allow_html=True)
 if st.button("Generate Coversheets"):
     st.experimental_set_query_params(page="coversheets")
-st.write("✔ **Generate individualized coversheets** summarizing each student's exam performance.")
+st.write("Generate individualized coversheets summarizing each student's exam performance.")
+st.markdown('</div>', unsafe_allow_html=True)
 
 st.markdown('</div>', unsafe_allow_html=True)
