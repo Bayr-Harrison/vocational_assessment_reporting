@@ -13,7 +13,7 @@ logo_url = "https://raw.githubusercontent.com/Bayr-Harrison/vocational_assessmen
 # Custom CSS for design
 custom_css = f"""
     <style>
-    /* Page background */
+    /* General page styling */
     .stApp {{
         background-color: #1E1E2F; /* Deep navy background */
         color: #E0E0E0; /* Light gray text */
@@ -71,13 +71,6 @@ custom_css = f"""
         padding: 20px;
         width: 300px;
         text-align: center;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-        cursor: pointer;
-    }}
-
-    .card:hover {{
-        transform: translateY(-5px);
-        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
     }}
 
     .card-title {{
@@ -114,9 +107,7 @@ st.markdown('<div class="subtitle">Streamlined solutions for generating assessme
 # Info section
 st.markdown("""
 <div class="info-section">
-This portal provides tools to generate detailed assessment reports efficiently:
-<br><br>
-Select from the options below to begin exploring your reports.
+This portal provides tools to generate detailed assessment reports efficiently. Below are the available features:
 </div>
 """, unsafe_allow_html=True)
 
@@ -124,37 +115,31 @@ Select from the options below to begin exploring your reports.
 st.markdown('<div class="card-container">', unsafe_allow_html=True)
 
 # Card 1: Pass/Fail Reports
-if st.button("Pass/Fail Reports"):
-    st.query_params(page="1_Pass_Fail_Report")
 st.markdown("""
 <div class="card">
     <div class="card-title">Pass/Fail Reports</div>
     <div class="card-description">
-        View pass/fail statistics for theory exams categorized by curriculum and date.
+        Generate detailed reports showing pass/fail statistics for theory exams, categorized by curriculum and date.
     </div>
 </div>
 """, unsafe_allow_html=True)
 
 # Card 2: Exam Results Query
-if st.button("Query Exam Results"):
-    st.query_params(page="2_Theory_Results_Report")
 st.markdown("""
 <div class="card">
     <div class="card-title">Query Exam Results</div>
     <div class="card-description">
-        Search for detailed theory exam results, including attendance and scores.
+        Search for detailed theory exam results, including attendance and scores, across specified date ranges.
     </div>
 </div>
 """, unsafe_allow_html=True)
 
 # Card 3: Coversheets
-if st.button("Individualized Coversheets"):
-    st.query_params(page="3_Coversheet_Generator")
 st.markdown("""
 <div class="card">
     <div class="card-title">Individualized Coversheets</div>
     <div class="card-description">
-        Generate personalized coversheets with detailed student exam performance.
+        Generate personalized coversheets summarizing each student's exam performance with detailed subject-wise results.
     </div>
 </div>
 """, unsafe_allow_html=True)
