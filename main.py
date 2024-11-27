@@ -107,5 +107,29 @@ st.markdown("""
     </div>
 </div>
         """, unsafe_allow_html=True)
+
+# Card container
+st.markdown("""
+<div class="card-container">
+    <div class="card">
+        <div class="card-title">Theory Exam General Reporting</div>
+        <div class="card-description">
+            Generate detailed reports showing pass/fail statistics for theory exams, categorized by curriculum and date.
+        </div>
+    </div>
+</div>
+        """, unsafe_allow_html=True)
+
+# Card container
+st.markdown("""
+<div class="card-container">
+    <div class="card">
+        <div class="card-title">Theory Coversheets</div>
+        <div class="card-description">
+            Generate detailed reports showing pass/fail statistics for theory exams, categorized by curriculum and date.
+        </div>
+    </div>
+</div>
+        """, unsafe_allow_html=True)
 # Footer
 st.markdown('<div class="footer">© 2024 Vocational Assessment Portal. All rights reserved.</div>', unsafe_allow_html=True)
