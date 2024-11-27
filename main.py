@@ -105,22 +105,7 @@ st.markdown("""
             Generate detailed reports showing pass/fail statistics for theory exams, categorized by curriculum and date.
         </div>
     </div>
-
-    <div class="card">
-        <div class="card-title">Query Exam Results</div>
-        <div class="card-description">
-            Search for detailed theory exam results, including attendance and scores, across specified date ranges.
-        </div>
-    </div>
-
-    <div class="card">
-        <div class="card-title">Individualized Coversheets</div>
-        <div class="card-description">
-            Generate personalized coversheets summarizing each student's exam performance with detailed subject-wise results.
-        </div>
-    </div>
 </div>
-""", unsafe_allow_html=True)
-
+        """, unsafe_allow_html=True)
 # Footer
 st.markdown('<div class="footer">© 2024 Vocational Assessment Portal. All rights reserved.</div>', unsafe_allow_html=True)
