@@ -24,7 +24,7 @@ custom_css = f"""
     .logo {{
         display: block;
         margin: 20px auto;
-        width: 180px;
+        width: 300px;
     }}
 
     /* Title styling */
@@ -93,8 +93,8 @@ st.markdown(custom_css, unsafe_allow_html=True)
 st.markdown(f'<img src="{logo_url}" class="logo" alt="ARX Logo">', unsafe_allow_html=True)
 
 # Title and subtitle
-st.markdown('<div class="title">Welcome to the Vocational Assessment Portal</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">Choose one of the report portals on the left</div>', unsafe_allow_html=True)
+st.markdown('<div class="title">Welcome to the Vocational Assessment Reporting Portal</div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitle">Choose one of the report options on the left. <br> An explaination of each can be found below:</div>', unsafe_allow_html=True)
 
 # Card container
 st.markdown("""
