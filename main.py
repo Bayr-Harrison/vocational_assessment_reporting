@@ -94,7 +94,7 @@ st.markdown(f'<img src="{logo_url}" class="logo" alt="ARX Logo">', unsafe_allow_
 
 # Title and subtitle
 st.markdown('<div class="title">Welcome to the Vocational Assessment Portal</div>', unsafe_allow_html=True)
-st.markdown('<div class="subtitle">Streamlined solutions for generating assessment-related reports</div>', unsafe_allow_html=True)
+st.markdown('<div class="subtitle">Choose one of the report portals on the left</div>', unsafe_allow_html=True)
 
 # Card container
 st.markdown("""
@@ -102,7 +102,7 @@ st.markdown("""
     <div class="card">
         <div class="card-title">Pass/Fail Reports</div>
         <div class="card-description">
-            Generate detailed reports showing pass/fail statistics for theory exams, categorized by curriculum and date.
+            Generate Pass Fail reports showing student outcoumes for theory exams conducted within a specified period.
         </div>
     </div>
 </div>
@@ -114,7 +114,7 @@ st.markdown("""
     <div class="card">
         <div class="card-title">Theory Exam General Reporting</div>
         <div class="card-description">
-            Generate detailed reports showing pass/fail statistics for theory exams, categorized by curriculum and date.
+            Detailed reporting on validated theory exam results from a specified period.
         </div>
     </div>
 </div>
@@ -126,7 +126,7 @@ st.markdown("""
     <div class="card">
         <div class="card-title">Theory Coversheets</div>
         <div class="card-description">
-            Generate detailed reports showing pass/fail statistics for theory exams, categorized by curriculum and date.
+            Generate theory exam coversheets for graduated student's files as per GACA regulation.
         </div>
     </div>
 </div>
