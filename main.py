@@ -104,7 +104,7 @@ st.markdown(f"""
         <div class="card-description">
             Generate Pass Fail reports showing student outcomes for theory exams conducted within a specified period.
             <br><br>
-            <a href="https://github.com/Bayr-Harrison/vocational_assessment_reporting/raw/main/pdf_passfail_reporting.pdf" target="_blank" style="color: #4CAF50; text-decoration: none;">View PDF</a>
+            <a href="https://github.com/Bayr-Harrison/vocational_assessment_reporting/raw/main/pdf_passfail_reporting.pdf" target="_blank" style="color: #4CAF50; text-decoration: none;">View Overview of Report</a>
         </div>
     </div>
 </div>
@@ -118,7 +118,7 @@ st.markdown(f"""
         <div class="card-description">
             Detailed reporting on validated theory exam results from a specified period.
             <br><br>
-            <a href="https://github.com/Bayr-Harrison/vocational_assessment_reporting/raw/main/pdf_theory_reporting.pdf" target="_blank" style="color: #4CAF50; text-decoration: none;">View PDF</a>
+            <a href="https://github.com/Bayr-Harrison/vocational_assessment_reporting/raw/main/pdf_theory_reporting.pdf" target="_blank" style="color: #4CAF50; text-decoration: none;">View Overview of Report</a>
         </div>
     </div>
 </div>
@@ -132,7 +132,7 @@ st.markdown(f"""
         <div class="card-description">
             Generate theory exam coversheets for graduated students' files as per GACA regulation.
             <br><br>
-            <a href="https://github.com/Bayr-Harrison/vocational_assessment_reporting/raw/main/pdf_coversheet_reporting.pdf" target="_blank" style="color: #4CAF50; text-decoration: none;">View PDF</a>
+            <a href="https://github.com/Bayr-Harrison/vocational_assessment_reporting/raw/main/pdf_coversheet_reporting.pdf" target="_blank" style="color: #4CAF50; text-decoration: none;">View Overview of Report</a>
         </div>
     </div>
 </div>
