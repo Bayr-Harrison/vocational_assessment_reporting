@@ -96,40 +96,47 @@ st.markdown(f'<img src="{logo_url}" class="logo" alt="ARX Logo">', unsafe_allow_
 st.markdown('<div class="title">Welcome to the Vocational Assessment Reporting Portal</div>', unsafe_allow_html=True)
 st.markdown('<div class="subtitle">Choose one of the report options on the left. <br> An explaination of each can be found below:</div>', unsafe_allow_html=True)
 
-# Card container
-st.markdown("""
+# Card container for Pass/Fail Reports
+st.markdown(f"""
 <div class="card-container">
     <div class="card">
         <div class="card-title">Pass/Fail Reports</div>
         <div class="card-description">
-            Generate Pass Fail reports showing student outcoumes for theory exams conducted within a specified period.
+            Generate Pass Fail reports showing student outcomes for theory exams conducted within a specified period.
+            <br><br>
+            <a href="https://github.com/Bayr-Harrison/vocational_assessment_reporting/raw/main/pdf_passfail_reporting.pdf" target="_blank" style="color: #4CAF50; text-decoration: none;">View PDF</a>
         </div>
     </div>
 </div>
-        """, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
-# Card container
-st.markdown("""
+# Card container for Theory Exam General Reporting
+st.markdown(f"""
 <div class="card-container">
     <div class="card">
         <div class="card-title">Theory Exam General Reporting</div>
         <div class="card-description">
             Detailed reporting on validated theory exam results from a specified period.
+            <br><br>
+            <a href="https://github.com/Bayr-Harrison/vocational_assessment_reporting/raw/main/pdf_theory_reporting.pdf" target="_blank" style="color: #4CAF50; text-decoration: none;">View PDF</a>
         </div>
     </div>
 </div>
-        """, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
 
-# Card container
-st.markdown("""
+# Card container for Theory Coversheets
+st.markdown(f"""
 <div class="card-container">
     <div class="card">
         <div class="card-title">Theory Coversheets</div>
         <div class="card-description">
-            Generate theory exam coversheets for graduated student's files as per GACA regulation.
+            Generate theory exam coversheets for graduated students' files as per GACA regulation.
+            <br><br>
+            <a href="https://github.com/Bayr-Harrison/vocational_assessment_reporting/raw/main/pdf_coversheet_reporting.pdf" target="_blank" style="color: #4CAF50; text-decoration: none;">View PDF</a>
         </div>
     </div>
 </div>
-        """, unsafe_allow_html=True)
+""", unsafe_allow_html=True)
+
 # Footer
 st.markdown('<div class="footer">© 2024 Vocational Assessment Portal. All rights reserved.</div>', unsafe_allow_html=True)
