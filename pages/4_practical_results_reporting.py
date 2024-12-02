@@ -91,7 +91,8 @@ if st.session_state["authenticated"]:
             WHERE prac_results.sent_date >= '{start_date}' 
             AND prac_results.sent_date <= '{end_date}'
             ORDER BY 
-                prac_results.task_date ASC, 
+                prac_results.task_date ASC,
+                prac_results.batch ASC, 
                 student_list.class ASC, 
                 prac_results.iatc_id ASC;
         """
