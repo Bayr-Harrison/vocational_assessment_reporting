@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import pg8000
@@ -73,17 +72,29 @@ if st.session_state["authenticated"]:
             port=os.environ["SUPABASE_PORT"]
         )
 
-# Query the database
+    # Query the database
     def query_database(start_date, end_date):
         db_query = f"""
-            SELECT prac_results.batch, prac_results.type, prac_results.iatc_id, student_list.name, student_list.class, prac_results.task,
-            prac_results.score, prac_results.status, prac_results.task_date, prac_results.sent_date
-            FROM prac_results. 
+            SELECT 
+                prac_results.batch AS "Batch Number",
+                prac_results.type AS "Batch Type",
+                prac_results.iatc_id AS "IATC ID",
+                student_list.name AS "Name",
+                student_list.class AS "Class",
+                prac_results.task AS "Task",
+                prac_results.score AS "Score",
+                prac_results.status AS "Attendance Status",
+                prac_results.task_date AS "Task Date",
+                prac_results.sent_date AS "Sending Date"
+            FROM prac_results
             JOIN student_list ON prac_results.iatc_id = student_list.iatc_id
-            WHERE prac_results.sent_date >= '{start_date}' AND prac_results.sent_date<= '{end_date}'
-            ORDER BY prac_results.task_date ASC, student_list.class ASC, prac_results.iatc_id ASC;
+            WHERE prac_results.sent_date >= '{start_date}' 
+            AND prac_results.sent_date <= '{end_date}'
+            ORDER BY 
+                prac_results.task_date ASC, 
+                student_list.class ASC, 
+                prac_results.iatc_id ASC;
         """
-
         try:
             connection = connect_to_supabase()
             cursor = connection.cursor()
@@ -99,11 +110,12 @@ if st.session_state["authenticated"]:
     # Create and download Excel file
     def create_excel(data, start_date, end_date):
         col_names = [
-            'Batch Number', 'Batch Type', 'IATC ID', 'Name', 'Class', 'Task', 'Score', 'Attendance Status', 'Task Date', 'Sending Date'
+            'Batch Number', 'Batch Type', 'IATC ID', 'Name', 'Class',
+            'Task', 'Score', 'Attendance Status', 'Task Date', 'Sending Date'
         ]
         wb = Workbook()
         ws = wb.active
-        ws.title = "Results"
+        ws.title = "Practical Task Results"
 
         # Write headers
         for col_num, header in enumerate(col_names, 1):
