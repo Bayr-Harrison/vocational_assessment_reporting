@@ -10,7 +10,7 @@ from openpyxl.utils import get_column_letter
 
 # Set page configuration
 st.set_page_config(
-    page_title="Theory Results General Reporting",
+    page_title="Practical Task Results Reporting Portal",
     page_icon="📘",
     layout="wide"
 )
@@ -40,8 +40,8 @@ page_style = """
 st.markdown(page_style, unsafe_allow_html=True)
 
 # Title
-st.markdown('<p class="title">Theory Results Reporting Portal</p>', unsafe_allow_html=True)
-st.markdown('<p class="subtitle">Query detailed results for theory exams and download them as an Excel file.</p>', unsafe_allow_html=True)
+st.markdown('<p class="title">Practical Task Results Reporting Portal</p>', unsafe_allow_html=True)
+st.markdown('<p class="subtitle">Query practical task results and download them as an Excel file.</p>', unsafe_allow_html=True)
 
 # Authentication
 if "authenticated" not in st.session_state:
@@ -73,20 +73,6 @@ if st.session_state["authenticated"]:
             port=os.environ["SUPABASE_PORT"]
         )
 
-    # Query the database
-    def query_database(start_date, end_date):
-        db_query = f"""
-            SELECT student_list.name, student_list.iatc_id, exam_results.nat_id,
-                   student_list.class, student_list.curriculum, exam_results.exam,
-                   exam_results.score, exam_results.result, exam_results.session,
-                   exam_results.date, exam_results.type, exam_results.attempt_index,
-                   exam_results.score_index
-            FROM exam_results 
-            JOIN student_list ON exam_results.nat_id = student_list.nat_id
-            WHERE exam_results.date >= '{start_date}' AND exam_results.date <= '{end_date}'
-            ORDER BY exam_results.date ASC, exam_results.session ASC, 
-                     student_list.class ASC, student_list.iatc_id ASC
-        """
 # Query the database
     def query_database(start_date, end_date):
         db_query = f"""
