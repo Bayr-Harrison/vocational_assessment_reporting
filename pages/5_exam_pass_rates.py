@@ -86,7 +86,7 @@ if st.session_state["authenticated"]:
         SELECT 
             exam_results.exam AS Exam,
             exam_list.qualification AS Qualification, 
-            exam_list.exam_long
+            exam_list.exam_long,
             ROUND(1.0 * SUM(CASE WHEN exam_results.result = 'PASS' THEN 1 ELSE 0 END) / COUNT(*), 2) AS PassRate,
             SUM(CASE WHEN exam_results.result = 'PASS' THEN 1 ELSE 0 END) AS Pass,
             SUM(CASE WHEN exam_results.result = 'FAIL' THEN 1 ELSE 0 END) AS Fail,
