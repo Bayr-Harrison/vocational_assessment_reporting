@@ -86,6 +86,7 @@ if st.session_state["authenticated"]:
         SELECT 
             exam_results.exam AS Exam,
             exam_list.qualification AS Qualification, 
+            exam_list.exam_long
             ROUND(1.0 * SUM(CASE WHEN exam_results.result = 'PASS' THEN 1 ELSE 0 END) / COUNT(*), 2) AS PassRate,
             SUM(CASE WHEN exam_results.result = 'PASS' THEN 1 ELSE 0 END) AS Pass,
             SUM(CASE WHEN exam_results.result = 'FAIL' THEN 1 ELSE 0 END) AS Fail,
@@ -103,7 +104,8 @@ if st.session_state["authenticated"]:
             AND exam_list.qualification = '{exam_qualification}'
         GROUP BY 
             exam_results.exam, 
-            exam_list.qualification
+            exam_list.qualification, 
+            exam_list.exam_long
         ORDER BY 
             PassRate DESC;
         """
@@ -126,7 +128,7 @@ if st.session_state["authenticated"]:
             data = query_database(start_date, end_date, exam_qualification)
             if data:
                 # Convert query result to DataFrame
-                df = pd.DataFrame(data, columns=["Exam", "Qualification", "PassRate", "# Pass", "# Fail", "Total"])
+                df = pd.DataFrame(data, columns=["Exam", "Subject", "Qualification", "PassRate", "# Pass", "# Fail", "Total"])
 
                 # Update PassRate to percentage format
                 df["PassRate"] = (df["PassRate"] * 100).round(0).astype(int).astype(str) + '%'
