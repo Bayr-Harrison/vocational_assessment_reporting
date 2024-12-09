@@ -137,11 +137,11 @@ if st.session_state["authenticated"]:
 
                 # Map qualification to bar color
                 if "EASA" in exam_qualification:
-                    bar_color = "#DE9634"  # Orange
+                    bar_color = "#E2A583"  # Orange
                 elif "GACA" in exam_qualification:
-                    bar_color = "#4A79A0"  # Blue
+                    bar_color = "#89CFDC"  # Blue
                 elif "UAS" in exam_qualification:
-                    bar_color = "#48BB86"  # Green
+                    bar_color = "#9FDEA7"  # Green
 
                 # Plot bar graph
                 st.write("Pass Rates by Exam:")
@@ -158,7 +158,7 @@ if st.session_state["authenticated"]:
                         f"{int(height)}%", 
                         ha="center", 
                         va="bottom", 
-                        fontsize=10
+                        fontsize=8
                     )
 
                 # Customize the graph
