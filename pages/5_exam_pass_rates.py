@@ -145,7 +145,7 @@ if st.session_state["authenticated"]:
 
                 # Plot bar graph
                 st.write("Pass Rates by Exam:")
-                fig, ax = plt.subplots(figsize=(10, 6))
+                fig, ax = plt.subplots(figsize=(12, 8))
                 df["NumericPassRate"] = df["PassRate"].str.rstrip('%').astype(float)  # For plotting
                 bars = ax.bar(df["Exam"], df["NumericPassRate"], color=bar_color)
 
@@ -158,16 +158,23 @@ if st.session_state["authenticated"]:
                         f"{int(height)}%", 
                         ha="center", 
                         va="bottom", 
-                        fontsize=8
+                        fontsize=10, 
+                        fontweight="bold", 
+                        color="black"
                     )
 
                 # Customize the graph
-                ax.set_title(f"1st Attempt Exam Pass Rates: {exam_qualification}", fontsize=16)
-                ax.set_xlabel("Exam", fontsize=12)
-                ax.set_ylabel("Pass Rate (%)", fontsize=12)
+                ax.set_title(f"1st Attempt Exam Pass Rates: {exam_qualification}", fontsize=18, fontweight="bold")
+                ax.set_xlabel("Exam", fontsize=14, fontweight="bold")
+                ax.set_ylabel("Pass Rate (%)", fontsize=14, fontweight="bold")
                 ax.set_xticks(range(len(df["Exam"])))
-                ax.set_xticklabels(df["Exam"], rotation=45, ha="right")
-                ax.set_ylim(0, 100)  # Always start at 0 and end at 100%
+                ax.set_xticklabels(df["Exam"], rotation=45, ha="right", fontsize=12)
+                ax.set_yticks(range(0, 101, 10))
+                ax.set_yticklabels([f"{y}%" for y in range(0, 101, 10)], fontsize=12)
+                ax.grid(axis="y", linestyle="--", alpha=0.7)
+                ax.spines["top"].set_visible(False)
+                ax.spines["right"].set_visible(False)
+
                 st.pyplot(fig)
             else:
                 st.warning("No data found for the selected criteria.")
