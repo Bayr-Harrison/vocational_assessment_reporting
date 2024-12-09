@@ -126,21 +126,48 @@ if st.session_state["authenticated"]:
             data = query_database(start_date, end_date, exam_qualification)
             if data:
                 # Convert query result to DataFrame
-                df = pd.DataFrame(data, columns=["Exam", "Qualification", "PassRate", "Pass", "Fail", "Total"])
+                df = pd.DataFrame(data, columns=["Exam", "Qualification", "PassRate", "# Pass", "# Fail", "Total"])
+
+                # Update PassRate to percentage format
+                df["PassRate"] = (df["PassRate"] * 100).round(0).astype(int).astype(str) + '%'
 
                 # Display DataFrame
                 st.write("Query Results:")
                 st.dataframe(df)
 
+                # Map qualification to bar color
+                if "EASA" in exam_qualification:
+                    bar_color = "#DE9634"  # Orange
+                elif "GACA" in exam_qualification:
+                    bar_color = "#4A79A0"  # Blue
+                elif "UAS" in exam_qualification:
+                    bar_color = "#48BB86"  # Green
+
                 # Plot bar graph
                 st.write("Pass Rates by Exam:")
                 fig, ax = plt.subplots(figsize=(10, 6))
-                ax.bar(df["Exam"], df["PassRate"], color="skyblue")
-                ax.set_title("Exam Pass Rates", fontsize=16)
+                df["NumericPassRate"] = df["PassRate"].str.rstrip('%').astype(float)  # For plotting
+                bars = ax.bar(df["Exam"], df["NumericPassRate"], color=bar_color)
+
+                # Add percent labels above bars
+                for bar in bars:
+                    height = bar.get_height()
+                    ax.text(
+                        bar.get_x() + bar.get_width() / 2, 
+                        height, 
+                        f"{int(height)}%", 
+                        ha="center", 
+                        va="bottom", 
+                        fontsize=10
+                    )
+
+                # Customize the graph
+                ax.set_title(f"1st Attempt Exam Pass Rates: {exam_qualification}", fontsize=16)
                 ax.set_xlabel("Exam", fontsize=12)
-                ax.set_ylabel("Pass Rate", fontsize=12)
+                ax.set_ylabel("Pass Rate (%)", fontsize=12)
                 ax.set_xticks(range(len(df["Exam"])))
                 ax.set_xticklabels(df["Exam"], rotation=45, ha="right")
+                ax.set_ylim(0, 100)  # Always start at 0 and end at 100%
                 st.pyplot(fig)
             else:
                 st.warning("No data found for the selected criteria.")
