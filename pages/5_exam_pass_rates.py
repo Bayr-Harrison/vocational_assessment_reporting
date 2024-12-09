@@ -159,7 +159,6 @@ if st.session_state["authenticated"]:
                         ha="center", 
                         va="bottom", 
                         fontsize=10, 
-                        fontweight="bold", 
                         color="black"
                     )
 
@@ -171,7 +170,6 @@ if st.session_state["authenticated"]:
                 ax.set_xticklabels(df["Exam"], rotation=45, ha="right", fontsize=12)
                 ax.set_yticks(range(0, 101, 10))
                 ax.set_yticklabels([f"{y}%" for y in range(0, 101, 10)], fontsize=12)
-                ax.grid(axis="y", linestyle="--", alpha=0.7)
                 ax.spines["top"].set_visible(False)
                 ax.spines["right"].set_visible(False)
 
